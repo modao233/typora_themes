@@ -19,7 +19,8 @@ body {
 	margin: 0 auto;
 	margin-bottom: 2em;
 	line-height: 1.53;
-	padding-top: 40px;
+	/*打印时顶部空白*/
+	/*padding-top: 40px;*/
 }
 
 @media only screen and (min-width: 1400px) {
@@ -27,10 +28,18 @@ body {
 		max-width: 1100px;
 	}
 }
-
+/*打印pdf选项*/
 @media print {
 	html {
-		font-size: 13px;
+		font-size: 16px;
+	}
+	body{
+		color: #000;/*打印字体颜色更深些*/
+		/*color: #333;*//*打印字体颜色比标题略浅些*/
+	}
+	@page{ 
+		size: auto;
+		margin: 10mm 0px 5mm 0px; /* 这里可以设置打印机的页边距 */
 	}
 }
 
@@ -39,7 +48,8 @@ body {
 
 #write>h1:first-child,
 h1 {
-	margin-top: 1.6em;
+	/*打印时顶部空白*/
+	/*margin-top: 1.6em;*/
 	font-weight: normal;
 }
 
@@ -60,16 +70,20 @@ h2 {
 
 h3 {
 	font-size: 1.5em;
-	font-weight: normal;
+	font-weight: bolder;
 	font-style: italic;
 }
 
 h4 {
 	font-size: 1.3em;
+	font-weight: normal;
+	font-style: italic;
+	color: #000;
 }
 
 h5, h6{
 	font-size: 1.1em;
+	font-style: italic;
 }
 
 h1{
@@ -133,23 +147,25 @@ strong em{
 
 ul {
 	list-style: square;
-	padding-left: 1.2em;
+	padding-left: 2em;
 	margin-block-start: 0.5em;
 	margin-block-end: 0.5em;
 }
 ol {
-	padding-left: 1.2em;
+	padding-left: 2.4em;
+	margin-block-start: 0.5em;
+	margin-block-end: 0.5em;
 }
 blockquote {
-	margin-left: 1em;
+	/*margin-left: 1em;*/
 	padding-left: 1em;
-	border-left: 1px solid #ddd;
+	border-left: 3px solid #000;
 }
 code,
 pre {
 	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
 	font-size: .9em;
-	background: white;
+	background: #eee;
 }
 .md-fences{
 	/*margin-left: 1em;*/
@@ -163,7 +179,8 @@ pre {
 }
 
 a {
-	color: #2484c1;
+	/*color: #2484c1;*/
+	color: #000000;
 	text-decoration: none;
 }
 a:hover {
@@ -257,13 +274,13 @@ table tbody+tbody {
 	
 	width: 100vw;
 	max-width: calc(100% + 60px);
-	margin-left: -30px;
+	/*margin-left: -30px;*/
 	border-left: 30px #f8f8f8 solid;
 	border-right: 30px #f8f8f8 solid;
 
 	margin-bottom: 2em;
 	margin-top: -1.3333333333333rem;
-	padding-top: 26px;
+	/*padding-top: 26px;*/
 	padding-bottom: 10px;
 	line-height: 1.8em;
 	font-size: 0.9em;
